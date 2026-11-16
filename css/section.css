@@ -1,0 +1,292 @@
+
+
+
+/* ============================================================
+   4. HISTORIA (#historia) — logo ao lado do texto
+   ============================================================ */
+
+#historia {
+    background-image:
+        radial-gradient(circle at center,
+            rgba(0, 0, 0, 0.6) 0%,
+            /* centro mais escuro */
+            rgba(0, 0, 0, 0.3) 40%,
+            /* suaviza no meio */
+            rgba(0, 0, 0, 0) 70%),
+        /* transparente nas bordas */
+        url("../assets-spider-man-2/assets-spider-man/personagem/imagem-secao-2.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
+}
+
+/* o container usa flex (classe is-flex do HTML):
+   alinhamos ao centro e abrimos 48px entre logo e texto */
+#historia .container.is-flex {
+    align-items: center;
+    gap: 48px;
+}
+
+.imagem-div {
+    flex: 0 0 320px;
+}
+
+.imagem-div img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+}
+
+.historia-titulo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 40px;
+    color: #f5f5f5;
+    margin-bottom: 24px;
+}
+
+/* faixa vermelha do tema na lateral do titulo */
+.historia-titulo {
+    border-left: 8px solid #b41f24;
+    padding-left: 24px;
+}
+
+.historia-texto p {
+    font-size: 16px;
+    line-height: 32px;
+    color: #cfcfcf;
+}
+
+
+/* ============================================================
+   5. VIDEOS (#videos) — Swiper com 4 cards
+   ============================================================ */
+
+#videos {
+
+    background-image:
+        radial-gradient(circle at center,
+            rgba(0, 0, 0, 0) 0%,
+            /* centro transparente/claro */
+            rgba(0, 0, 0, 0.4) 50%,
+            /* meio suavizado */
+            rgba(0, 0, 0, 0.8) 100%),
+        /* cantos bem escuros */
+        url("../assets-spider-man-2/assets-spider-man/imagem\ video-filtered.webp");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
+}
+
+/* titulos da secao menores que o h1 do hero (hierarquia) */
+#videos {
+
+    width: 100%;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.texto-secao-video {
+
+    margin-top: 20px;
+}
+#videos .title {
+    font-size: 40px;
+}
+
+#videos .subtitle {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.card-video {
+    display: block;
+    text-decoration: none;
+    margin-top: 24px;
+}
+
+/* moldura do video 16:9 com cantos arredondados */
+.thumnall {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.45);
+}
+
+.card-video .thumb {
+    display: block;
+    width: 100%;
+    height: 224px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+/* zoom suave do fundo ao passar o mouse */
+.card-video:hover .thumb {
+    transform: scale(1.08);
+}
+
+/* icone de play centralizado sobre a thumbnail */
+.card-video .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 64px;
+    height: 64px;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease;
+}
+
+.card-video:hover .icon {
+    transform: translate(-50%, -50%) scale(1.16);
+}
+
+/* nome do video abaixo da moldura */
+.card-video span {
+    display: block;
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    color: #f5f5f5;
+}
+
+.card-video:hover span {
+    color: #e04848;
+}
+
+/* pagina + setas: o HTML agrupa tudo dentro de .btn
+   Tiramos os elementos da posicao absoluta do Swiper
+   e alinhamos em linha, com 24px de distancia */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.btn .swiper-pagination {
+    position: static;
+}
+
+/* bolinhas: 8px, e a ativa vira pildora de 24px */
+.swiper-pagination-bullet {
+    width: .5rem;
+    height: .5rem;
+    border-radius: .5rem;
+    background-color: #555555;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    width: 1.5rem;
+    background-color: #b41f24;
+}
+
+/* setas circulares de 48px fora das bordas do swiper */
+.btn .swiper-button-prev,
+.btn .swiper-button-next {
+    position: static;
+    width: 3rem;
+    height: 3rem;
+    margin: 0;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #f5f5f5;
+    --swiper-navigation-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn .swiper-button-prev:hover,
+.btn .swiper-button-next:hover {
+    background-color: #b41f24;
+}
+
+/* barra de rolagem fina do Swiper (8px) */
+.swiper-scrollbar {
+    height: .5rem;
+    margin-top: 1rem;
+    background-color: #2a2a2a;
+}
+
+.swiper-scrollbar-drag {
+    background-color: #b41f24;
+}
+
+
+/* ============================================================
+   6. RENASCIMENTO (#renascimento) — bloco sombrio do simbionte
+   ============================================================ */
+
+#renascimento {
+    /* brilho vermelho escuro nascendo do topo: clima simbionte */
+    background-image:
+        radial-gradient(circle at 50% 0%, #2a0d12 0%, #0d0d0d 64%);
+    animation: changebg 10s infinite linear;
+}
+
+/* bloco de texto centralizado com largura de leitura confortavel */
+#renascimento .meu-container {
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+#renascimento .title {
+    font-size: 2.5rem;
+}
+
+#renascimento .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#renascimento p {
+    font-size: 1rem;
+    line-height: 2rem;
+    color: #cfcfcf;
+}
+
+
+@keyframes changebg {
+    0% {
+        background-image: url('../assets-spider-man-2/assets-spider-man/bg/imagem1\ \(1\)-filtered\ \(1\).webp');
+    }
+
+    16.6% {
+        background-image: url('../assets-spider-man-2/assets-spider-man/bg/imagem1\ \(2\)-filtered.webp');
+    }
+
+    33.3% {
+        background-image: url('../assets-spider-man-2/assets-spider-man/bg/imagem1\ \(3\)-filtered.webp');
+    }
+
+    50% {
+        background-image: url('../assets-spider-man-2/assets-spider-man/bg/imagem1\ \(4\)-filtered.webp');
+    }
+
+    66.6% {
+        background-image: url('../assets-spider-man-2/assets-spider-man/bg/imagem1\ \(5\)-filtered\ -\ Copia.webp');
+    }
+
+    83.3% {
+        background-image: url('../assets-spider-man-2/assets-spider-man/bg/imagem1\ \(6\)-filtered.webp');
+    }
+
+    100% {
+        background-image: url('../assets-spider-man-2/assets-spider-man/bg/imagem1\ \(1\)-filtered\ \(1\).webp');
+    }
+}
+

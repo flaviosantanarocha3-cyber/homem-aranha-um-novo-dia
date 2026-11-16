@@ -1,0 +1,75 @@
+
+/* ============================================================
+   3. HERO (#inicio) — fundo vermelho com padrao de teia
+   ============================================================ */
+.hero.is-fullheight {
+    /* espaço para o navbar fixo de 56px */
+    padding-top: 64px;
+
+    /* gradiente + imagem de fundo */
+   background-image: 
+        radial-gradient(circle at center, 
+            rgba(0, 0, 0, 0.1) 0%,     /* Centro bem transparente para ver a imagem */
+            rgba(0, 0, 0, 0.5) 60%,    /* Começa a escurecer suavemente no meio */
+            rgba(0, 0, 0, 0.85) 100%   /* Cantos/bordas bem escuros (pretos) */
+        ),
+        url("../assets-spider-man-2/assets-spider-man/personagem/imagem-hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0; /* Equivalente a top: 0, right: 0, bottom: 0, left: 0 */
+    pointer-events: none; /* Garante que cliques e toques passem direto para os elementos abaixo */
+    
+    /* Gradiente circular: escuro nas bordas/cantos, clareando/transparente no centro */
+    background: radial-gradient(
+        circle at center,
+        rgba(0, 0, 0, 0.1) 0%,   /* Centro mais claro/visível */
+        rgba(0, 0, 0, 0.5) 60%,  /* Meio intermediário */
+        rgba(0, 0, 0, 0.9) 100%  /* Cantos e bordas bem escuros (pretos) */
+    );
+    
+    z-index: 1; /* Mantém a camada do gradiente acima da imagem de fundo */
+}
+/* ocupa toda a largura */
+.titulo-hero {
+    text-align: center;
+}
+
+/* h1 principal: escala profissional 40 -> 64px */
+.hero .title {
+    font-size: clamp(40px, 6vw, 64px);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    text-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+}
+
+.hero .subtitle {
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 16px;
+}
+
+/* barrinha vermelha escura de destaque sob o subtitulo */
+.titulo-hero::after {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 8px;
+    margin: 24px auto 0 auto;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
