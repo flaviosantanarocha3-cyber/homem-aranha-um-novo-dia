@@ -396,3 +396,45 @@
 
     }
 }
+
+/* ---------- telas menores que 480px (ex.: 360px / 320px / 300px) ---------- */
+@media (max-width: 360px) {
+    .hero,
+    #inicio,
+    #historia,
+    #videos,
+    #renascimento {
+        height: auto !important;
+        min-height: auto !important;
+        overflow: hidden;
+    }
+
+    .titulo-hero .title {
+        font-size: 24px;
+        line-height: 1.2;
+    }
+
+    .titulo-hero .subtitle {
+        font-size: 16px;
+        line-height: 1.3;
+    }
+
+    .imagem-div {
+        max-width: 200px !important;
+    }
+
+    .imagem-div img {
+        max-height: 150px;
+        height: auto;
+    }
+
+    #renascimento .title {
+        font-size: 30px;
+        line-height: 1.15;
+    }
+
+    #renascimento .subtitle {
+        font-size: 18px;
+        line-height: 1.25;
+    }
+}
