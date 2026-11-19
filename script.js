@@ -75,6 +75,7 @@ const swiper = new Swiper('.swiper', {
             slidesPerView: 1,
             spaceBetween: 16,
         },
+        
         767: {                  // tablet: 2 cards por vez
             slidesPerView: 2.1,
             spaceBetween: 24,

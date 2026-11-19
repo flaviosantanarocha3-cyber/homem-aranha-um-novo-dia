@@ -314,7 +314,7 @@
 }
 
 /* ---------- celular muito pequeno (ate 480px) ---------- */
-@media (max-width: 480px) {
+@media (max-width: 360px) and (max-width: 480px) {
 
     .hero {
 
@@ -361,7 +361,8 @@
         display: flex;
         
     }
-
+    
+    
     #renascimento {
 
         background-size: cover;
@@ -398,25 +399,36 @@
 }
 
 /* ---------- telas menores que 480px (ex.: 360px / 320px / 300px) ---------- */
+
+/* ---------- telas menores que 480px (ex.: 360px / 320px / 300px) ---------- */
 @media (max-width: 360px) {
     .hero,
     #inicio,
     #historia,
-    #videos,
+    
     #renascimento {
-        height: auto !important;
+        height: 100vh !important;
         min-height: auto !important;
         overflow: hidden;
+        width: 100%;
     }
 
     .titulo-hero .title {
-        font-size: 24px;
+        font-size: 1rem;
         line-height: 1.2;
+        
     }
 
     .titulo-hero .subtitle {
-        font-size: 16px;
-        line-height: 1.3;
+        font-size: 2px;
+        
+    }
+
+    #videos {
+
+        width: 100%;
+        height: 100vh;
+        max-height: 500px;
     }
 
     .imagem-div {
@@ -428,13 +440,77 @@
         height: auto;
     }
 
+     #renascimento {
+
+        width: 100%;
+        height: 100vh;
+        padding-top: 50px;
+     }
+
     #renascimento .title {
         font-size: 30px;
         line-height: 1.15;
+        display: none;
     }
 
     #renascimento .subtitle {
         font-size: 18px;
         line-height: 1.25;
+        display: none;
+    }
+}
+
+/* ---------- ajuste especifico do slide de trailers em 360px ---------- */
+@media (max-width: 360px) {
+    #videos {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto !important;
+        min-height: auto !important;
+        overflow: visible;
+    }
+
+    #videos .swiper-wrapper {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center;
+        width: 100%;
+    }
+
+    #videos .swiper,
+    #videos .swiper-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        height: auto !important;
+        min-height: 200px;
+        display: block;
+    }
+
+    #videos  {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        height: auto !important;
+        min-height: 190px;
+        box-sizing: border-box;
+    }
+
+     #videos .title {
+
+        font-size: 24px;
+     }
+
+    
+
+    #videos .swiper-slide iframe,
+    #videos .swiper-slide video,
+    #videos .swiper-slide img {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 180px;
+        height: auto;
+        display: block;
     }
 }
